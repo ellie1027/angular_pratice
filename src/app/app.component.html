@@ -60,15 +60,18 @@
 
 <!--</div>-->
 
-<input [(ngModel)]="value"/>
+<input #input [(ngModel)]="value"/>
 <button (click)="insertVal(value)">insert</button>
 
 <ul>
   <li *ngFor="let val of values ; let i = index;">
-    {{ i }} : {{ val }} <button (click)="deleteVal(i)">x</button>
+    {{ i }} : {{ val }} <button (click)="deleteVal(i)">x</button> <button (click)="sendChild(val)">sendChild</button>
   </li>
 </ul>
 
+<hr>
+
+<app-child1 [dataFromParent]='dataForChild'></app-child1>
 
 
 

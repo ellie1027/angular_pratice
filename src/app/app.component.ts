@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
 //   age: number;
 // }
 
+// 컴포넌트 : html, css, javascript
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,6 +28,7 @@ export class AppComponent {
   // }
   value = '';
   values: string[] = [];
+  dataForChild: string[] = [];
 
   insertVal(val: string): void {
     if (val !== ''){
@@ -35,6 +38,14 @@ export class AppComponent {
 
   deleteVal(idx: number): void {
     this.values.splice(idx, 1);
+  }
+
+  sendChild(val: any){
+    this.dataForChild.push(val);
+  }
+
+  sendGlobaly(input: any){
+
   }
 
 }
