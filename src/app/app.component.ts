@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataTransferService } from './data-transfer.service';
 
 // interface Person {
 //   name: string;
@@ -29,6 +30,7 @@ export class AppComponent {
   value = '';
   values: string[] = [];
   dataForChild: string[] = [];
+  globalDataFromParent: string[] = [];
 
   insertVal(val: string): void {
     if (val !== ''){
@@ -40,12 +42,18 @@ export class AppComponent {
     this.values.splice(idx, 1);
   }
 
+  //child1 (부모->자식)
   sendChild(val: any){
     this.dataForChild.push(val);
   }
 
-  sendGlobaly(input: any){
-
+  //child2 (서비스 이용 데이터 바인딩)
+  sendGlobally(val: any){
+    this.dataTransfer.dataTransfer.emit(val);
   }
+
+  constructor(private dataTransfer: DataTransferService){
+  }
+
 
 }

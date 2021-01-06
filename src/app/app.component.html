@@ -59,19 +59,31 @@
 <!--  </div>-->
 
 <!--</div>-->
+<h1>to-do list</h1>
 
 <input #input [(ngModel)]="value"/>
 <button (click)="insertVal(value)">insert</button>
 
 <ul>
   <li *ngFor="let val of values ; let i = index;">
-    {{ i }} : {{ val }} <button (click)="deleteVal(i)">x</button> <button (click)="sendChild(val)">sendChild</button>
+    {{ i }} : {{ val }} <button (click)="deleteVal(i)">x</button> 
+    <button (click)="sendChild(val)">sendChild</button>
+    <button (click)="sendGlobally(val)">sendGlobally</button>
   </li>
 </ul>
 
-<hr>
+<hr> 
+<h2>child 1 - child-parent</h2>
 
 <app-child1 [dataFromParent]='dataForChild'></app-child1>
+
+<hr>
+<h2>child 2 - service</h2>
+
+<app-child2></app-child2>
+
+
+
 
 
 
