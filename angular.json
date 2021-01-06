@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "ang01"
+  "defaultProject": "ang01",
+  "cli": {
+    "analytics": "0f82893d-0c71-4954-884f-ec2f63e80308"
+  }
 }
