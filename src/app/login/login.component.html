@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <input type="text" (keyup)="id = $event.target.value" placeholder="id">
+    </div>
+
+    <div>
+        <input type="password" (keyup)="password = $event.target.value" placeholder="password">
+    </div>
+
+    <div>
+        <button (click)="login()">Login</button>
+    </div>
+
+    <div>
+        {{ loginFailedMessage }}
+    </div>
+</div>
